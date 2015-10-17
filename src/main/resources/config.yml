@@ -1,0 +1,15 @@
+lang: en
+
+auth:
+    # Timeout in seconds.
+    auth_timeout: 30
+    # Maximum failed attempts before a ban
+    max_failed_attempts: 3
+    # Seconds to ban on failed attempt.
+    ban_time_on_fail: 300
+enabled_types:
+    - GOOGLE_TOKEN
+    
+descriptions:
+    GOOGLE_TOKEN: Google Authenticator method. See https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2
+    

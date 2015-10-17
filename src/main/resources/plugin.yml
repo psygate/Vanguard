@@ -1,0 +1,48 @@
+name: Vanguard
+main: com.psygate.vanguard.Vanguard
+version: 1.0
+author: psygate
+#depend: [Nucleus]
+description: A two factor authentication implementation for minecraft.
+commands:
+    enable:
+        description: Enables vanguard two factor auth for your account.
+        usage: enable <type>
+        aliases: [ve]
+        permission: vanguard.action.enable
+    disable:
+        description: Disable vanguard two factor auth for your account.
+        usage: disable
+        aliases: [vd]
+        permission: vanguard.action.disable
+    token:
+        description: Provide the security token to vanguard.
+        usage: token <token>
+        aliases: [vt]
+        permission: vanguard.action.token.submit
+    available:
+        description: Lists the available auth types with description.
+        usage: available
+        aliases: [va, list]
+        permission: vanguard.action.types.list
+permissions:
+    vanguard.action.enable:
+        default: false
+        description: Allows people to enable vanguard.
+    vanguard.action.disable:
+        default: false
+        description: Allows people to disable vanguard.
+    vanguard.action.token.submit:
+        default: false
+        description: Allows people to submit a token to vanguard.
+    vanguard.action.types.list:
+        default: false
+        description: Allows people to list the enabled vanguard auth types.
+    vanguard.default:
+        default: false
+        description: Gives default permissions for vanguard.
+        children:
+            vanguard.action.enable: true
+            vanguard.action.disable: true
+            vanguard.action.token.submit: true
+            vanguard.action.types.list: true
